@@ -22,4 +22,4 @@ calendarPlot(ma, pollutant = "taxa_mortes",
              xlab ="Elaboração: @teixeira_tadeu. Dados: www.brasil.io")
 
 
-#Calcular média movel
+write_csv(ma, "caso_ma.csv")
