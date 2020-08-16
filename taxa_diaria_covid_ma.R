@@ -4,15 +4,16 @@ library(zoo) # moving averages
 library(tidyverse)
 
 #leitura do dataset
-caso <- read.csv("~/Downloads/caso.csv")
+caso <- read.csv("~/Downloads/caso.csv") #dataset original disponível em brasil.io
 
 #filtrar Maranhão
 ma<-caso %>% 
   filter(state == "MA")
+
 #transformar coluna de string para data 
 ma$date<-as_date(ma$date)
 
-#Transformar/calcular taxa de mortes 
+#Transformar/calcular taxa de mortes
 ma<-ma %>% 
   mutate(taxa_mortes = round((deaths / confirmed)*100, digits = 4))
 
